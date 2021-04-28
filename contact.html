@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <title>Les chiens d'Annie et cie</title>
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+  <nav>
+    <ul>
+      <li id="first"><h1><a href="index.html">Les chiens d'<span id="title">Annie</span> et compagnie</a></h1></li>
+      <li class="navlinks"><a href=chiens.html> Les chiens </a></li>
+      <li class="navlinks"><a href=races.html > Races </a></li>
+      <li class="navlinks"><a href=#> Témoignages </a></li>
+      <li class="navlinks"><a href=contact.html id="current"> Contactez-nous </a></li>
+    </ul>
+  </nav>
+  
+
+  <!-- MAIN CONTENT -->
+  <div class="contact">
+
+    <h1>Contactez-nous...</h1>
+
+    <form action="/ma-page-de-traitement" method="post">
+      <div>
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="user_name">
+      </div>
+      <div>
+          <label for="mail">E-mail :</label>
+          <input type="email" id="mail" name="user_mail">
+      </div>
+      <div>
+          <label for="msg">Message :</label>
+          <textarea id="msg" name="user_message"></textarea>
+      </div>
+      <div class="button">
+        <button type="submit">Envoyer le message</button>
+      </div>
+    </form>
+</div>  
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div>   
+      <p>Les chiens d'Annie et compagnie <br>
+      1234, rue Patates, Montreal, QC  <br>
+      A1B 2C3, 123-456-7890</p>
+    </div>
+
+    <div>
+      <p>Copyright &copy; 2021, Tous Droits Réservés</p>
+    </div>
+
+    <div class="social">
+      <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="mailto:annie@email.com" target="_blank"><i class="far fa-envelope fa-2x"></i></a>
+      <a href="http://kijiji.ca" target="_blank"><i class="fab fa-kaggle fa-2x"></i></a>
+    </div>
+
+    <div id="pageup">
+      <a href="#">Haut de page<i class="fas fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
