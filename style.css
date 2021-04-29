@@ -6,18 +6,19 @@
 }
 
 body {
-  padding-top: 80px;
-  padding-bottom: 105px;
+  padding-top: 51px;
+  padding-bottom: 120px;
   position: relative;
   min-height: 100vh;
   line-height: 1.6;
   font-family: "Rubik", sans-serif;
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(221, 221, 221);
+  overflow-x: hidden;
+  /* 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*
   height: 100vh;
   overflow: hidden;
   */
@@ -25,7 +26,10 @@ body {
 }
 
 /* -- NAVIGATION -- */
+
 nav {
+  z-index: 5;
+  white-space: nowrap;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,40 +38,50 @@ nav {
 
 nav h1 {
   font-family: "Rancho", cursive;
-  font-size: 50px;
-  margin: 0px 30px;
+  font-size: 38px;
   font-weight: normal;
   text-align: center;
+  margin: 0;
 }
+
 nav #title {
   color: rgb(151, 26, 26);
 }
+
 nav ul {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
+  padding: 0;
 }
+
+nav ul li {
+  font-weight: normal;
+  font-size: 22px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 16.5px 20px;
+}
+
 nav ul #first {
-  padding: 0 100px;
+  padding: 0;
+  padding-right: 50px;
+  align-self: center;
 }
+
 nav ul #first:hover {
   transform: scale(1.025);
 }
 
-nav ul li {
-  font-weight: 600;
-  font-size: 22px;
-  list-style: none;
-}
-nav ul li a {
-  text-decoration: none;
-  color: black;
-  padding: 26.5px 20px;
-}
 nav ul li #current {
   color: rgb(151, 26, 26);
 }
+
 nav ul .navlinks a:hover {
   background-color: rgb(248, 172, 172);
 }
@@ -97,7 +111,7 @@ nav ul .navlinks a:hover {
 
 /* -- CHIEN CONTENT -- */
 .content-parents {
-  background-color: rgb(236, 236, 236);
+  background-color: rgb(221, 221, 221);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -142,7 +156,7 @@ nav ul .navlinks a:hover {
 .content-parents img {
   width: 400px;
   height: 400px;
-  border: 2px solid black;
+  box-shadow: 15px 15px rgb(92, 0, 0);
 }
 
 .content-parents h1 {
@@ -155,22 +169,14 @@ nav ul .navlinks a:hover {
 .content-chien {
   padding: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
   margin-bottom: 30px;
 }
 
-
 .content-chien img {
-  border: 2px solid black;
-  border-radius: 20px;
-  width: 300px;
-  height: 300px;
-}
-
-.chiots {
-  /* h1 */
-  padding-top: 20px;
+  width: 350px;
+  height: 350px;
 }
 
 .chiots h1 {
@@ -194,38 +200,34 @@ nav ul .navlinks a:hover {
 
 /* -- RACES -- */
 
-.races{
+.races {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: center;
-
 }
 
-
-.races .cards{
+.races .cards {
   flex-basis: 20%;
 }
-.races .cards img{
+.races .cards img {
   width: 300px;
   height: 300px;
 }
-.races .cards h2{
+.races .cards h2 {
   text-align: center;
 }
 
-
 /* -- FORM -- CONTACT */
-
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(201, 204, 209);
+  background-color: rgb(180, 180, 180);
   padding: 40px;
-  border-radius: 50px;
+  margin: 100px 0;
 }
 
 .contact h1 {
@@ -238,7 +240,7 @@ nav ul .navlinks a:hover {
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 0;
   width: 600px;
   padding: 1em;
 }
@@ -248,10 +250,12 @@ form div + div {
 }
 
 form div {
+  display: flex;
   transform: translateX(40px);
 }
+
 label {
-  display: inline-block;
+  /* display: inline-block; */
   width: 90px;
   text-align: left;
 }
@@ -270,7 +274,6 @@ textarea:focus {
 }
 
 textarea {
-  /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
   vertical-align: top;
   height: 7em;
 }
@@ -300,7 +303,7 @@ footer {
   position: absolute;
   font-size: 16px;
   width: 100%;
-  height: 110px;
+  height: 120px;
   padding: 5px 10px;
   background-color: rgb(48, 48, 48);
   display: flex;
@@ -319,11 +322,12 @@ footer div {
 }
 
 footer #pageup i {
-  padding: 0 10px;
+  padding: 0 20px;
+  transform: translatey(5px);
 }
 footer .social i {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 footer .social i:hover,
@@ -331,30 +335,12 @@ footer #pageup a:hover {
   color: rgb(255, 136, 136);
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 1480px) {
-  body {
-    padding-top: 51px;
-  }
-
-  nav h1 {
-    font-size: 32px;
-    margin: 0;
-  }
-
-  nav ul #first {
-    padding: 0;
-  }
-
-  nav ul li {
-    font-size: 18px;
-    font-weight: normal;
-  }
-
-  nav ul li a {
-    padding: 14.5px 20px;
-  }
+footer .shortf {
+  display: none;
 }
+
+/* MEDIA QUERIES */
+
 @media (max-width: 1280px) {
   body {
     padding-top: 51px;
@@ -367,12 +353,27 @@ footer #pageup a:hover {
     margin-bottom: 30px;
   }
 }
-@media (max-width: 960px) {
+
+@media (max-width: 1150px) {
+  nav ul li a {
+    padding: 16.5px 11px;
+  }
+  nav ul #first {
+    padding-right: 40px;
+    align-self: center;
+  }
+}
+
+@media (max-width: 1000px) {
   footer {
     font-size: 14px;
   }
   body {
-    padding-top: 163px;
+    padding-top: 0px;
+  }
+  nav {
+    position: static;
+    top: 0;
   }
   nav ul {
     flex-direction: column;
@@ -386,5 +387,22 @@ footer #pageup a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 20px 20px;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .longf {
+    display: none;
+  }
+  footer .shortf {
+    display: inline;
+  }
+  form div {
+    transform: translateX(0px);
+    flex-direction: column;
+    align-items: center;
+  }
+  form div label {
+    transform: translateX(-100px);
   }
 }
