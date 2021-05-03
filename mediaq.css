@@ -14,31 +14,45 @@
 }
 
 @media (max-width: 1150px) {
+  body {
+    padding-top: 130px;
+  }
+
   nav ul li a {
     padding: 16.5px 11px;
   }
   nav ul #first {
-    padding-right: 40px;
     align-self: center;
-  }
-}
-
-@media (max-width: 1000px) {
-  footer {
-    font-size: 14px;
-  }
-  body {
-    padding-top: 0px;
-  }
-  nav {
-    position: static;
-    top: 0;
+    padding: 0;
   }
   nav ul {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px;
+    grid-template-areas:
+      "to to to to to to"
+      ". bo1 bo2 bo3 bo4 .";
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
   }
-  nav ul li a {
-    padding: 3px;
+  nav ul #first {
+    grid-area: to;
+  }
+  nav ul li:nth-child(2) {
+    grid-area: bo1;
+  }
+  nav ul li:nth-child(3) {
+    grid-area: bo2;
+  }
+  nav ul li:nth-child(4) {
+    grid-area: bo3;
+  }
+  nav ul li:nth-child(5) {
+    grid-area: bo4;
+  }
+  footer {
+    font-size: 14px;
   }
   .content-chien {
     padding: 20px;
@@ -51,9 +65,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: 0.25fr 1fr 1fr;
     grid-template-areas:
-    "top1"
-    "bot1" 
-    "bot2";
+      "top1"
+      "bot1"
+      "bot2";
     align-items: center;
     padding: 10px;
   }
@@ -61,8 +75,8 @@
     padding-top: 30px;
     justify-self: center;
   }
-  .parents-2, .parents-3
-   {
+  .parents-2,
+  .parents-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,6 +100,26 @@
   }
 }
 @media (max-width: 600px) {
+  body {
+    padding-top: 250px;
+  }
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-template-areas:
+      "to"
+      "bo1"
+      "bo2"
+      "bo3"
+      "bo4";
+    grid-gap: 0px;
+    align-items: center;
+    justify-items: center;
+  }
+  nav ul li a {
+    padding: 11px;
+  }
+
   footer .longf {
     display: none;
   }
@@ -99,5 +133,31 @@
   }
   form div label {
     transform: translateX(-100px);
+  }
+}
+
+@media (max-width: 500px) {
+  nav ul li {
+    font-size: 20px;
+  }
+  nav ul #first a {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: 90px 50px 50px 50px 50px;
+  }
+  nav ul #first {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 5px;
+  }
+  nav ul #first a {
+    white-space: normal;
+    line-height: 1;
   }
 }
